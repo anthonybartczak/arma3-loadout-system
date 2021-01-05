@@ -1,7 +1,7 @@
 # How to:
 
 1. Download and unpack the script in your scenario directory.
-![](https://i.imgur.com/wJcTnCE.png)
+![](https://i.imgur.com/4sBQCBV.png)
 
 
 2. Create and apply your loadout via ACE Arsenal.
