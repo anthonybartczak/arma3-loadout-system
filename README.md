@@ -1,13 +1,13 @@
 # How to:
 
-### 1. Download and unpack the script in your scenario directory.
+1. Download and unpack the script in your scenario directory.
 ![](https://i.imgur.com/wJcTnCE.png)
 
 
-### 2. Create and apply your loadout via ACE Arsenal.
+2. Create and apply your loadout via ACE Arsenal.
 
 
-### 3. Enter developer console (ctrl + d), paste in the code below and execute.
+3. Enter developer console (ctrl + d), paste in the code below and execute.
 ```sqf
 private _caseName = "base"; 
 private _unitGear = str(getUnitLoadout player); 
@@ -17,16 +17,14 @@ _gearText = _gearText + format ["};"] + _br + _br;
 copyToClipboard _gearText;
 ```
 
-
-### 4. Paste the clipboard into your ```cn_caseList.sqf``` file.
-```sqf
+4. Paste the clipboard into your `cn_caseList.sqf` file.
+```
 case "base": { _data = [["Tier1_SR16_CQB_Mod2_IMOD_Black","Tier1_KAC_556_QDC_CQB_Black","Tier1_URX4_NGAL_M603V","Tier1_EXPS3_2_3xMag_Black_Up",["Tier1_30Rnd_556x45_Mk318Mod0_EMag",30],[],"Tier1_AFG_MLOK_Black"],["rhs_weap_m72a7","","","",[],[],""],["Tier1_Glock19_Urban","","Tier1_X300U","",["Tier1_15Rnd_9x19_JHP",15],[],""],["Project_BJC_Shirt_Cut_Jean2",[["ACE_fieldDressing",2],["ACE_elasticBandage",2],["ACE_packingBandage",2],["ACE_quikclot",2],["ACE_tourniquet",2],["ACE_morphine",2],["kat_chestSeal",2],["ACE_MapTools",1],["ACE_microDAGR",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",2]]],["milgp_v_mmac_assaulter_belt_MC",[["Tier1_30Rnd_556x45_Mk318Mod0_EMag",8,30],["rhs_mag_an_m8hc",2,1],["rhs_mag_m67",2,1],["ACE_M84",2,1],["B_IR_Grenade",3,1]]],["milgp_bp_hydration_mc",[]],"opscoretc","",["ACE_Vector","","","",[],[],""],["ItemMap","","TFAR_anprc152","ItemCompass","ItemWatch","rhsusf_ANPVS_15"]]
 };
 ```
 
-
-### 5. Change the case name according to your preference. This way you can add multiple cases.
-```sqf
+5. Change the case name according to your preference. This way you can add multiple cases.
+```
 case "base": { _data = [["Tier1_SR16_CQB_Mod2_IMOD_Black","Tier1_KAC_556_QDC_CQB_Black","Tier1_URX4_NGAL_M603V","Tier1_EXPS3_2_3xMag_Black_Up",["Tier1_30Rnd_556x45_Mk318Mod0_EMag",30],[],"Tier1_AFG_MLOK_Black"],["rhs_weap_m72a7","","","",[],[],""],["Tier1_Glock19_Urban","","Tier1_X300U","",["Tier1_15Rnd_9x19_JHP",15],[],""],["Project_BJC_Shirt_Cut_Jean2",[["ACE_fieldDressing",2],["ACE_elasticBandage",2],["ACE_packingBandage",2],["ACE_quikclot",2],["ACE_tourniquet",2],["ACE_morphine",2],["kat_chestSeal",2],["ACE_MapTools",1],["ACE_microDAGR",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",2]]],["milgp_v_mmac_assaulter_belt_MC",[["Tier1_30Rnd_556x45_Mk318Mod0_EMag",8,30],["rhs_mag_an_m8hc",2,1],["rhs_mag_m67",2,1],["ACE_M84",2,1],["B_IR_Grenade",3,1]]],["milgp_bp_hydration_mc",[]],"opscoretc","",["ACE_Vector","","","",[],[],""],["ItemMap","","TFAR_anprc152","ItemCompass","ItemWatch","rhsusf_ANPVS_15"]]
 };
 
@@ -34,13 +32,12 @@ case "medic": { _data = [["Tier1_SR16_CQB_Mod2_IMOD_Black","Tier1_KAC_556_QDC_CQ
 };
 ```
 
-
-### 6. Paste the execVM code into your units init field.
+6. Paste the execVM code into your units init field.
 ```sqf
 nul = [this, "base", true, true, true, true, true] execVM "setLoadout.sqf";
 ```
 
-### 8. Modify the parameters.
+8. Modify the parameters.
 ```sqf
 nul = [
 
@@ -55,5 +52,4 @@ nul = [
 ] execVM "cn_setLoadout.sqf";
 ```
 
-
-### 7. Tweak the ```cn_itemList.sqf``` to use proper randomized classnames.
+7. Tweak the `cn_itemList.sqf` to use proper randomized classnames.
