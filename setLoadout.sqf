@@ -7,7 +7,7 @@
 
 //nul = [player, "medic", true, true, true, true, true] execVM "setLoadout.sqf";
 
-//#include "case.sqf";
+//________________ RANDOMIZATION VARIABLES ________________
 
 private _unit = _this select 0;
 private _data = _this select 1;
@@ -18,10 +18,6 @@ private _randomizeSecondary = _this select 3;
 private _randomizeUniform = _this select 4;
 private _randomizeHelmet = _this select 5;
 private _randomizeBackpack = _this select 6;
-
-//________________ RANDOMIZATION VARIABLES ________________
-
-
 
 //________________ CLEAR INVENTORY ________________
 
@@ -107,31 +103,14 @@ handgunBase = [
   "Tier1_Glock19_WAR_TB"
 ];
 
+private _magazinePrimary = ["Tier1_30Rnd_556x45_Mk318Mod0_EMag", 30];
+
+//________________ INCLUDE CASE ________________
+
 switch (_data) do 
 {
 	#include "case.sqf"
 };
-
-//________________ DEFINE VARIABLES ________________
-
-private _vest = [];
-private _helmet = selectRandom uniformHelmet;
-private _uniform = selectRandom uniformBody;
-private _backpack = selectRandom uniformBackpack;
-private _binos = ["ACE_Vector", "", "", "", [],[], ""];
-
-private _gun = selectRandom primaryWeaponsBase;
-private _handgun = selectRandom handgunBase;
-private _launcher = "";
-
-private _optics = selectRandom weaponOptics;
-private _bipod = selectRandom weaponBipod;
-private _attachment = selectRandom weaponAttachment;
-private _silencer = "";
-
-private _magazinePrimary = ["Tier1_30Rnd_556x45_Mk318Mod0_EMag", 30];
-private _magazineSecondary = ["Tier1_15Rnd_9x19_JHP", 15];
-private _magazineLauncher = "";
 
 //________________ CHECK FOR RANDOMIZATION VARIABLES ________________
 
@@ -149,14 +128,6 @@ if (_randomizeUniform == true) then {[_data, [3, 0], selectRandom uniformBody] c
 if (_randomizeHelmet == true) then {[_data, [6], selectRandom uniformHelmet] call BIS_fnc_setNestedElement};
 if (_randomizeBackpack == true) then {[_data, [5], selectRandom uniformBackpack] call BIS_fnc_setNestedElement};
 
-//________________ SWITCH FOR DIFFERENT CLASSES ________________
-
-
-
 //________________ SET UNIT LOADOUT ________________
 
 _unit setUnitLoadout _data;
-
-//hintData = [_data, [0, 0]] call BIS_fnc_returnNestedElement;
-//hint hintData;
-
