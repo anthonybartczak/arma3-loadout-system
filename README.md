@@ -24,3 +24,4 @@ copyToClipboard _gearText;
 ```sqf
 nul = [player, "base", true, true, true, true, true] execVM "setLoadout.sqf";
 ```
+### 7. Edit ITEM LISTS to your likings
