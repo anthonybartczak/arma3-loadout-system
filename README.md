@@ -64,4 +64,4 @@ nul = [
 ] execVM "cn_setLoadout.sqf";
 ```
 
-7. Tweak the `cn_itemList.sqf` to use proper randomized classnames.
+9. Tweak the `cn_itemList.sqf` to use proper randomized classnames.
