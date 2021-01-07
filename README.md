@@ -4,7 +4,7 @@
 ![](https://i.imgur.com/4sBQCBV.png)
 
 
-2. Create and apply your loadout via ACE Arsenal.
+2. Set your unit control to Player. Create and apply your loadout via ACE Arsenal.
 
 
 3. Enter developer console (ctrl + d), paste in the code below and execute.
